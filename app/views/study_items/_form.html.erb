@@ -1,15 +1,25 @@
 <%= form_with model: study_item do |f| %>
-  <div>
-    <%= f.label :title %>
-    <%= f.text_field :title, required: "required" %>
+  <div class="field">
+    <%= f.label :title, class: "label" %>
+    <div class="control">
+      <%= f.text_field :title, required: "required", class: "input" %>
+    </div>
   </div>
-  <div>
-    <%= f.label :status %>
-    <%= f.number_field :status %>
-  <div>
-    <%= f.label :category_id, 'Categoria' %>
-    <%= f.collection_select :category_id, Category.all, :id, :title %>
+  <div class="field">
+    <%= f.label :status, class: "label" %>
+    <div class="control">
+      <%= f.number_field :status, class: "input" %>
+    </div>
   </div>
+  <div class="field">
+    <%= f.label :category_id, 'Categoria', class: "label" %>
+    <div class="control">
+      <div class="select">
+        <%= f.collection_select :category_id, Category.all, :id, :title %>
+      </div>
+    </div>
+  </div>
+  <br/>
 
-  <%= f.submit %>
+  <%= f.submit class: "button is-primary" %>
 <% end %>
