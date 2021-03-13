@@ -8,7 +8,7 @@
   <div class="field">
     <%= f.label :status, class: "label" %>
     <div class="control">
-      <%= f.number_field :status, class: "input" %>
+      <%= f.select :status, StudyItem.statuses.keys.map{ |status| [status.humanize] } %>
     </div>
   </div>
   <div class="field">
