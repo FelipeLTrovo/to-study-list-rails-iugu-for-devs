@@ -23,9 +23,9 @@ class StudyItemsController < ApplicationController
     end
 
     def update
-        set_study_item
+        load_study_item
         if @study_item.update(study_item_params)
-          redirect_to @study_item
+          redirect_to root_path
         else
           render :edit
         end
