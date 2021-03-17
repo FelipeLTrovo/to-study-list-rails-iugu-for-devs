@@ -4,7 +4,7 @@ class StudyItem < ApplicationRecord
   enum status: {
     pending: 0,
     in_progress: 1,
-    deleted: 2
+    done: 2
   }
 
   def full_title

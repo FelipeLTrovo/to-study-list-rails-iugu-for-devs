@@ -8,6 +8,7 @@ class HomeController < ApplicationController
 
         def load_study_items_statuses
             @study_items_statuses = StudyItem.statuses
+            @colors = ["is-info", "is-warning", "is-success"]
         end
 
         def load_study_items

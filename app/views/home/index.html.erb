@@ -2,8 +2,8 @@
 
 
 <% @study_items_statuses.each do |study_item_status| %>
-    <h1 class="title is-centered notification is-info"><%= study_item_status.first.humanize %></h1>
-    <%= render partial: "study_items", locals: { study_items: @study_items.where("status = ?", study_item_status.last)   } %>
+    <h1 class="title is-centered notification <%= @colors[study_item_status.last] %>"><%= study_item_status.first.humanize %></h1>
+    <%= render partial: "study_items", locals: { study_items: @study_items.where("status = ?", study_item_status.last) } %>
 <% end %>
 
 

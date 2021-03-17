@@ -30,6 +30,12 @@ class StudyItemsController < ApplicationController
           render :edit
         end
       end
+    
+    def destroy
+        load_study_item
+        @study_item.destroy
+        redirect_to root_path
+    end
 
 
 
